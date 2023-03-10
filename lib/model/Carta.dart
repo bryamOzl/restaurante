@@ -36,8 +36,20 @@ final platos = [
       id: 1,
       nombre: 'Llapingacho',
       precio: 5.00,
-      imagen: 'llapingacho.jpeg',
-      descripcion: 'Plato cuencano')
+      imagen: 'llapingacho.jpg',
+      descripcion: 'Plato cuencano'),
+  new Carta(
+      id: 5,
+      nombre: 'Flautas',
+      precio: 3.00,
+      imagen: 'flautas.jpeg',
+      descripcion: 'Plato mexicano'),
+  new Carta(
+      id: 6,
+      nombre: 'Seco de Pollo',
+      precio: 2.00,
+      imagen: 'seco_pollo.jpeg',
+      descripcion: 'Plato ecuatoriano')
 ];
 
 final bebidas = [
@@ -90,6 +102,6 @@ final postres = [
       id: 1,
       nombre: 'Pie',
       precio: 1.00,
-      imagen: 'pie.png',
+      imagen: 'pie.jpg',
       descripcion: 'Postre.....')
 ];

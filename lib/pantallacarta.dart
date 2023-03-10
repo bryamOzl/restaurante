@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurante/model/Carta.dart';
 import 'package:restaurante/pantallaInicio.dart';
 
 class PantallaCarta extends StatefulWidget {
@@ -48,13 +49,163 @@ class _PantallaCartaState extends State<PantallaCarta> {
         drawer: MenuLateral(),
         body: TabBarView(children: [
           Container(
-            child: Text("PLATOS"),
+            padding: EdgeInsets.all(10),
+            child: GridView.builder(
+              itemCount: platos.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: MediaQuery.of(context).size.width /
+                    (MediaQuery.of(context).size.height) /
+                    0.9,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 2,
+              ),
+              itemBuilder: (context, index) {
+                return Container(
+                  margin: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0x00000fcc),
+                        blurRadius: 30,
+                        offset: Offset(10, 10),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      Image.asset('assets/img/' + platos[index].imagen),
+                      Text(
+                        platos[index].nombre,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Text(
+                          "\$ " + platos[index].precio.toString(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                );
+              },
+            ),
           ),
           Container(
-            child: Text("BEBIDAS"),
+            padding: EdgeInsets.all(10),
+            child: GridView.builder(
+              itemCount: bebidas.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: MediaQuery.of(context).size.width /
+                    (MediaQuery.of(context).size.height) /
+                    0.9,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 2,
+              ),
+              itemBuilder: (context, index) {
+                return Container(
+                  margin: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0x00000fcc),
+                        blurRadius: 30,
+                        offset: Offset(10, 10),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      Image.asset('assets/img/' + bebidas[index].imagen),
+                      Text(
+                        bebidas[index].nombre,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Text(
+                          "\$ " + bebidas[index].precio.toString(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                );
+              },
+            ),
           ),
           Container(
-            child: Text("POSTRES"),
+            padding: EdgeInsets.all(10),
+            child: GridView.builder(
+              itemCount: postres.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: MediaQuery.of(context).size.width /
+                    (MediaQuery.of(context).size.height) /
+                    0.9,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 2,
+              ),
+              itemBuilder: (context, index) {
+                return Container(
+                  margin: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0x00000fcc),
+                        blurRadius: 30,
+                        offset: Offset(10, 10),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      Image.asset('assets/img/' + postres[index].imagen),
+                      Text(
+                        postres[index].nombre,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Text(
+                          "\$ " + postres[index].precio.toString(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                );
+              },
+            ),
           )
         ]),
       ),
