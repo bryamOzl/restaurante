@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restaurante/pantallainicio.dart';
+import 'package:restaurante/pantallaInicio.dart';
 
 class PantallaCarta extends StatefulWidget {
   PantallaCarta({Key? key}) : super(key: key);
