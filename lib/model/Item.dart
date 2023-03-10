@@ -1,13 +1,18 @@
 class Item {
-  String? id;
-  String? nombre;
-  double? precio;
-  String? unidad;
-  String? imagen;
-  int? cantidad;
+  late String id;
+  late String nombre;
+  late double precio;
+  late String unidad;
+  late String imagen;
+  late int cantidad;
 
-  Item(this.id, this.nombre, this.precio, this.unidad, this.imagen,
-      this.cantidad);
+  Item(
+      {required this.id,
+      required this.nombre,
+      required this.precio,
+      required this.unidad,
+      required this.imagen,
+      required this.cantidad});
 
   Item.map(dynamic o) {
     this.id = o['id'];
