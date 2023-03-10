@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurante/pantallacarta.dart';
 
 class PantallaInicio extends StatefulWidget {
   PantallaInicio({Key? key}) : super(key: key);
@@ -57,7 +58,23 @@ class _PantallaInicioState extends State<PantallaInicio> {
                 Padding(
                   padding: EdgeInsets.only(top: 100),
                 ),
-                RaisedButton(
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.black,
+                    shape: CircleBorder(),
+                    padding: EdgeInsets.all(13.0),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        // ignore: non_constant_identifier_names
+                        builder: (BuildContext) => PantallaCarta()));
+                  },
+                  child: Icon(
+                    Icons.chevron_right,
+                    color: Colors.white,
+                  ),
+                ),
+                /* RaisedButton(
                   shape: CircleBorder(),
                   padding: EdgeInsets.all(13.0),
                   color: Colors.black,
@@ -66,7 +83,7 @@ class _PantallaInicioState extends State<PantallaInicio> {
                     color: Colors.white,
                   ),
                   onPressed: () {},
-                )
+                ) */
               ],
             )
           ],
