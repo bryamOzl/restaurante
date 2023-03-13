@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import 'package:restaurante/carrito/Carrito.dart';
 import 'package:restaurante/model/Carta.dart';
+import 'package:restaurante/pantallaCarrito.dart';
 import 'package:restaurante/pantallaInicio.dart';
 
 class PantallaCarta extends StatefulWidget {
@@ -59,10 +60,9 @@ class _PantallaCartaState extends State<PantallaCarta> {
                   IconButton(
                     onPressed: () {
                       carrito.numeroItems != 0
-                          // ignore: deprecated_member_use
-                          ? _globalKey.currentState!.showSnackBar(SnackBar(
-                              content: Text('Ir al carrito'),
-                            ))
+                          ? Navigator.of(context).push(MaterialPageRoute(
+                              // ignore: non_constant_identifier_names
+                              builder: (BuildContext) => PantallaCarrito()))
                           // ignore: deprecated_member_use
                           : _globalKey.currentState!.showSnackBar(SnackBar(
                               content: Text(
