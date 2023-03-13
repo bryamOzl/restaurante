@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:restaurante/model/Item.dart';
 
-class Carito extends ChangeNotifier {
+class Carrito extends ChangeNotifier {
   Map<String, Item> _items = {};
   Map<String, Item> get items {
     return {..._items};
@@ -31,16 +31,16 @@ class Carito extends ChangeNotifier {
   }
 
   void agregarItem(
-    String producto_id,
+    String productoId,
     String nombre,
     double precio,
     String unidad,
     String imagen,
     int cantidad,
   ) {
-    if (_items.containsKey(producto_id)) {
+    if (_items.containsKey(productoId)) {
       _items.update(
-          producto_id,
+          productoId,
           (old) => Item(
               id: old.id,
               nombre: old.nombre,
@@ -50,9 +50,9 @@ class Carito extends ChangeNotifier {
               cantidad: old.cantidad + 1));
     } else {
       _items.putIfAbsent(
-          producto_id,
+          productoId,
           () => Item(
-              id: producto_id,
+              id: productoId,
               nombre: nombre,
               precio: precio,
               unidad: unidad,
@@ -61,14 +61,14 @@ class Carito extends ChangeNotifier {
     }
   }
 
-  void removerItem(String producto_id) {
-    _items.remove(producto_id);
+  void removerItem(String productoId) {
+    _items.remove(productoId);
   }
 
-  void incrementarCantidadItem(String producto_id) {
-    if (_items.containsKey(producto_id)) {
+  void incrementarCantidadItem(String productoId) {
+    if (_items.containsKey(productoId)) {
       _items.update(
-          producto_id,
+          productoId,
           (old) => Item(
               id: old.id,
               nombre: old.nombre,
@@ -79,11 +79,11 @@ class Carito extends ChangeNotifier {
     }
   }
 
-  void decrementarCantidadItem(String producto_id) {
-    if (!_items.containsKey(producto_id)) return;
-    if (_items[producto_id]!.cantidad > 1) {
+  void decrementarCantidadItem(String productoId) {
+    if (!_items.containsKey(productoId)) return;
+    if (_items[productoId]!.cantidad > 1) {
       _items.update(
-          producto_id,
+          productoId,
           (old) => Item(
               id: old.id,
               nombre: old.nombre,
@@ -92,7 +92,7 @@ class Carito extends ChangeNotifier {
               imagen: old.imagen,
               cantidad: old.cantidad - 1));
     } else {
-      _items.remove(producto_id);
+      _items.remove(productoId);
     }
   }
 
