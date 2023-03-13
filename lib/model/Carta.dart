@@ -33,7 +33,7 @@ final platos = [
       imagen: 'encebollado.jpg',
       descripcion: 'Plato ecuatoriano'),
   new Carta(
-      id: 1,
+      id: 4,
       nombre: 'Llapingacho',
       precio: 5.00,
       imagen: 'llapingacho.jpg',
@@ -54,25 +54,25 @@ final platos = [
 
 final bebidas = [
   new Carta(
-      id: 1,
+      id: 7,
       nombre: 'Agua',
       precio: 0.50,
       imagen: 'agua.png',
       descripcion: 'Bebida....'),
   new Carta(
-      id: 2,
+      id: 8,
       nombre: 'Gaseosa',
       precio: 0.75,
       imagen: 'gaseosa.png',
       descripcion: 'Bebida.....'),
   new Carta(
-      id: 3,
+      id: 9,
       nombre: 'Jugo',
       precio: 1.00,
       imagen: 'jugo.jpg',
       descripcion: 'Bebida......'),
   new Carta(
-      id: 1,
+      id: 10,
       nombre: 'Te',
       precio: 1.00,
       imagen: 'te.png',
@@ -81,25 +81,25 @@ final bebidas = [
 
 final postres = [
   new Carta(
-      id: 1,
+      id: 11,
       nombre: 'Cheaskake',
       precio: 1.50,
       imagen: 'cheaskake.jpg',
       descripcion: 'Postre....'),
   new Carta(
-      id: 2,
+      id: 12,
       nombre: 'Helado',
       precio: 1.75,
       imagen: 'helado.png',
       descripcion: 'Postre.....'),
   new Carta(
-      id: 3,
+      id: 13,
       nombre: 'Pastel',
       precio: 2.00,
       imagen: 'pastel.jpeg',
       descripcion: 'Postre......'),
   new Carta(
-      id: 1,
+      id: 14,
       nombre: 'Pie',
       precio: 1.00,
       imagen: 'pie.jpg',

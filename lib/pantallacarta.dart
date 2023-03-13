@@ -14,12 +14,15 @@ class PantallaCarta extends StatefulWidget {
 }
 
 class _PantallaCartaState extends State<PantallaCarta> {
+  final GlobalKey<ScaffoldState> _globalKey = new GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Consumer<Carrito>(builder: (context, carrito, child) {
       return DefaultTabController(
         length: 3,
         child: Scaffold(
+          key: _globalKey,
           backgroundColor: Color(0xffd4d4d4),
           appBar: AppBar(
             backgroundColor: Color(0xffd4d4d4),
@@ -50,6 +53,52 @@ class _PantallaCartaState extends State<PantallaCarta> {
                 )
               ],
             ),
+            actions: [
+              new Stack(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      carrito.numeroItems != 0
+                          // ignore: deprecated_member_use
+                          ? _globalKey.currentState!.showSnackBar(SnackBar(
+                              content: Text('Ir al carrito'),
+                            ))
+                          // ignore: deprecated_member_use
+                          : _globalKey.currentState!.showSnackBar(SnackBar(
+                              content: Text(
+                                'Llenar el carrito',
+                                textAlign: TextAlign.center,
+                              ),
+                            ));
+                    },
+                    icon: Icon(
+                      Icons.shopping_cart,
+                      color: Colors.black,
+                    ),
+                  ),
+                  new Positioned(
+                    top: 6,
+                    right: 6,
+                    child: Container(
+                      padding: EdgeInsets.all(2),
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      constraints: BoxConstraints(minWidth: 14, minHeight: 14),
+                      child: Text(
+                        carrito.numeroItems.toString(),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 9,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
           drawer: MenuLateral(),
           body: TabBarView(children: [
