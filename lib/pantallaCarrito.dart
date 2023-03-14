@@ -126,12 +126,44 @@ class _PantallaCarritoState extends State<PantallaCarrito> {
                                     '\$ ' +
                                         (item.precio * item.cantidad)
                                             .toString(),
-                                    style: TextStyle(color: Colors.white),
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                               ),
                             ],
-                          ))
+                          )),
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Text('Subtotal: '),
+                          ),
+                          Text('\$ ' + carrito.subTotal.toStringAsFixed(2)),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Row(
+                        children: [
+                          Expanded(child: Text('Impuesto: ')),
+                          Text('\$ ' + carrito.impuesto.toStringAsFixed(2)),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Row(
+                        children: [
+                          Expanded(child: Text('Total: ')),
+                          Text('\$ ' + carrito.total.toStringAsFixed(2)),
+                        ],
+                      ),
+                    )
                   ],
                 ),
         ),

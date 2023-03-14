@@ -26,7 +26,7 @@ class Carrito extends ChangeNotifier {
 
   double get total {
     var total = 0.0;
-    total = this.subTotal * 0.12;
+    total = this.subTotal + impuesto;
     return total;
   }
 
