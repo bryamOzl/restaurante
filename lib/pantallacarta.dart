@@ -243,6 +243,7 @@ class _PantallaCartaState extends State<PantallaCarta> {
                                   "1",
                                   bebidas[index].imagen,
                                   1);
+                              nCarrito.setnItems = nCarrito.numeroItems;
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -318,6 +319,7 @@ class _PantallaCartaState extends State<PantallaCarta> {
                                   "1",
                                   postres[index].imagen,
                                   1);
+                              nCarrito.setnItems = nCarrito.numeroItems;
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -403,7 +405,11 @@ class MenuLateral extends StatelessWidget {
                 color: Colors.black54,
               ),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  // ignore: non_constant_identifier_names
+                  builder: (BuildContext) => PantallaCarrito()));
+            },
           ),
           InkWell(
             child: new ListTile(
