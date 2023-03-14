@@ -19,6 +19,8 @@ class _PantallaCartaState extends State<PantallaCarta> {
 
   @override
   Widget build(BuildContext context) {
+    final nCarrito = Provider.of<Carrito>(context);
+
     return Consumer<Carrito>(builder: (context, carrito, child) {
       return DefaultTabController(
         length: 3,
@@ -87,7 +89,7 @@ class _PantallaCartaState extends State<PantallaCarta> {
                       ),
                       constraints: BoxConstraints(minWidth: 14, minHeight: 14),
                       child: Text(
-                        carrito.numeroItems.toString(),
+                        nCarrito.nItems.toString(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
@@ -165,6 +167,7 @@ class _PantallaCartaState extends State<PantallaCarta> {
                                   "1",
                                   platos[index].imagen,
                                   1);
+                              nCarrito.setnItems = nCarrito.numeroItems;
                             });
                           },
                           style: ElevatedButton.styleFrom(

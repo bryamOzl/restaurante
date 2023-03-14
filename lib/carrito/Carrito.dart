@@ -2,6 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:restaurante/model/Item.dart';
 
 class Carrito extends ChangeNotifier {
+  int _numeroItems = 0;
+
+  int get nItems {
+    return _numeroItems;
+  }
+
+  set setnItems(int numero) {
+    this._numeroItems = numero;
+    notifyListeners();
+  }
+
   Map<String, Item> _items = {};
   Map<String, Item> get items {
     return {..._items};
